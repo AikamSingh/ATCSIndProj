@@ -99,42 +99,20 @@ def rsa_decrypt_text(private_key, ciphertext):
 
 def main():
     # Generate RSA keys using two prime numbers
-    p = 97
-    q = 89
+    p = int(input(" - Enter a prime number (17, 19, 23, etc): "))
+    q = int(input(" - Enter another prime number (Not one you entered above): "))
+    print(" - Generating your public / private key-pairs now . . .")
     private_key, public_key = generate_key(p, q)
     
-    print(f"Private key: {private_key}")
-    print(f"Public key: {public_key}")
+    print(" - Your public key is ", public_key, " and your private key is ", private_key)
     
-    # Encrypt a plaintext number (e.g., 5)
-    plaintext_number = 5
-    encrypted_number = rsa_encrypt(public_key, plaintext_number)
-    print(f"Encrypted number: {encrypted_number}")
-    
-    # Decrypt the ciphertext number
-    decrypted_number = rsa_decrypt(private_key, encrypted_number)
-    print(f"Decrypted number: {decrypted_number}")
-    
-    # Check if decryption is correct
-    if decrypted_number == plaintext_number:
-        print("Number encryption and decryption successful!")
-    else:
-        print("Number encryption and decryption failed!")
-    
-    # Encrypt a plaintext text (e.g., "HELLO")
-    plaintext_text = "FEEBLE"
-    encrypted_text = rsa_encrypt_text(public_key, plaintext_text)
-    print(f"Encrypted text: {encrypted_text}")
+    message = input(" - Enter a message to encrypt with your public key: ")
+    encrypted_msg = rsa_encrypt_text(public_key, message)
 
-    # Decrypt the ciphertext text
-    decrypted_text = rsa_decrypt_text(private_key, encrypted_text)
-    print(f"Decrypted text: {decrypted_text}")
-    
-    # Check if decryption is correct
-    if decrypted_text == plaintext_text:
-        print("Text encryption and decryption successful!")
-    else:
-        print("Text encryption and decryption failed!")
+    print(" - Your encrypted message is: ", ''.join(map(lambda x: str(x), encrypted_msg)))
+    print(" - Decrypting message with private key ", private_key, " . . .")
+    print(" - Your message is: ", rsa_decrypt_text(private_key, encrypted_msg))
+
 
 if __name__ == "__main__":
     main()
