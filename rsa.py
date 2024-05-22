@@ -99,8 +99,8 @@ def rsa_decrypt_text(private_key, ciphertext):
 
 def main():
     # Generate RSA keys using two prime numbers
-    p = 7
-    q = 11
+    p = 97
+    q = 89
     private_key, public_key = generate_key(p, q)
     
     print(f"Private key: {private_key}")
@@ -122,7 +122,7 @@ def main():
         print("Number encryption and decryption failed!")
     
     # Encrypt a plaintext text (e.g., "HELLO")
-    plaintext_text = "HELLO"
+    plaintext_text = "FEEBLE"
     encrypted_text = rsa_encrypt_text(public_key, plaintext_text)
     print(f"Encrypted text: {encrypted_text}")
 
