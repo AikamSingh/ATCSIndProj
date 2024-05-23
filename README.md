@@ -25,3 +25,6 @@ Finished a couple more functions for the rsa algorithm. Got some tests working, 
 
 ### **2024-5-22**
 RSA works with numbers and some words. 
+
+### **2024-5-23**
+Played around with different inputs for the program, and they all work. YAY!
