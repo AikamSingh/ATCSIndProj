@@ -8,6 +8,13 @@ RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem, one of the oldest 
 
 <hr>
 
+## How To Use
+1. Run the program
+2. Follow the prompts
+3. Watch as the message is encrypted and decrypted before your eyes!
+
+<hr>
+
 ## Changelog
 
 ### **2024-5-09**
